@@ -1,0 +1,8 @@
+#arquivos do XAMP
+.modell
+.modell-usb
+.version
+
+#pasta privada
+.Privado
+.Privado/*
