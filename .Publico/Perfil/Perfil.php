@@ -39,14 +39,39 @@ $img_path = !empty($user["IMG"]) && file_exists($user["IMG"]) ? $user["IMG"] : $
             <img src="../Imgs/Fundo.jpg" alt="Sidebar background image">
         </div>
         <div class="elementos">
-            <a href="#">Home</a>
-            <a href="../Perfil/Perfil.php">Perfil</a>
+            <a href="../Home/Home.php">Home</a>
+            <a href="#">Perfil</a>
             <a href="Configuracoes.php">Configurações</a>
             <a href="../../.Privado/Sair.php">Sair</a>
         </div>
     </div>
     <div class="Container">
-        
+        <div class="Perfil">
+            <div class="Perfil-Img">
+                <!-- Exibe a imagem de perfil se existir, caso contrário, exibe a imagem padrão -->
+                <img src="<?php echo $img_path; ?>" alt="Imagem de perfil">
+            </div>
+            <div class="Perfil-Info">
+                <table>
+                    <tr>
+                        <th>Nome</th>
+                        <td><?php echo $user["Nome"]; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Niki</th>
+                        <td><?php echo $user["Niki"]; ?></td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td><?php echo $user["Email"]; ?></td>
+                    </tr>
+                    <tr>
+                        <th>ID</th>
+                        <td><?php echo $user["ID"]; ?></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
     <script src="../CSS/Sidebar/sidebar.js"></script>
 </body>

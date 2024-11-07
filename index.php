@@ -2,12 +2,11 @@
 
 session_start();
 
-if (isset($_SESSION['Certificado'])) {
-    header('Location: .Publico/Home/Home.php');
-    exit();
+if (!isset($_SESSION["certificado"])) {
+    header("Location: .Publico/Entrada/Entrada.html");
+    exit;
 } else {
-    header('Location: .Publico/Entrada/Entrada.html');
-    exit();
+    header("Location: .Publico/Home/Home.php");
+    exit;
 }
-
 ?>

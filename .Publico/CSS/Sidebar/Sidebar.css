@@ -1,0 +1,50 @@
+.Sidebar {
+    width: 50px; /* A sidebar começa mais estreita */
+    transition: width 0.3s ease; /* Transição suave para expandir a barra lateral */
+    overflow: hidden; /* Esconder o conteúdo quando colapsada */
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    height: 100%;
+    align-items: flex-start;
+    padding-top: 50px;
+    gap: 50px;
+}
+
+.Container {
+    width: calc(100% - 50px); /* Ajusta a largura do container */
+    transition: margin-left 0.3s ease, width 0.3s ease; /* Transição suave para margem e largura */
+    margin-left: 50px; /* Ajusta a margem esquerda para acomodar a barra lateral */
+    padding: 20px;
+}
+.Sidebar img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 20px 20px;
+}
+.elementos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+.elementos a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center; /* Alinha o texto ao centro */
+    padding: 10px; /* Espaço interno para garantir um tamanho uniforme */
+    transition: 0.3s ease; /* Transição suave */
+}
+.elementos a:hover {
+    height: 60px;
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+}
+.Sidebar.expanded .elementos a {
+    text-align: center; /* Alinhar ao centro quando expandido */
+}

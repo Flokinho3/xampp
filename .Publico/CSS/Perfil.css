@@ -1,0 +1,77 @@
+body{
+    background-color: #4a20e4;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.Container .Perfil{
+    width: 400px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.Perfil h1{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+.Perfil .Input{
+    margin-bottom: 10px;
+}
+.Perfil .Input label{
+    display: block;
+    font-size: 14px;
+    color: #666;
+}
+.Perfil .Input input{
+    width: calc(100% - 20px);
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.Perfil-Img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.Perfil-Img img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.Perfil-Img input{
+    display: none;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+table th, table td{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+table th{
+    background: #f9f9f9;
+    color: #333;
+}
+table tr:nth-child(even){
+    background: #3811c4;
+}
+table tr:hover{
+    background: #0e83b9;
+}
