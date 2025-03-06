@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="icon" href="../Elementos/IMGS/favicon.ico" type="image/x-icon">
+    <style>
+        body{
+            background-color: rgb(9, 73, 133);
+        }
+    </style>
+</head>
+<body>
+    <div class="Container">
+        <div class="Vidro_cadastro">
+            <form action="../PHP/Cadastro.php" method="POST">
+                <h1>Cadastro</h1>
+                <div class="elemento">
+                    <h2>Nome</h2>
+                    <input type="text" name="Nome" placeholder="Nome" required>
+                    <h2>Email</h2>
+                    <input type="text" name="Email" placeholder="Email" required>
+                    <h2>Senha</h2>
+                    <input type="password" name="Senha" placeholder="Senha" required>
+                    <h2>Apelido</h2>
+                    <input type="text" name="Niki_name" placeholder="Niki" required>
+                    <h2>Data de Nacimento</h2>
+                    <input type="date" name="Data_nasc" required>
+                    <input type="submit" value="Cadastrar">
+                </div>
+            </form>                
+        </div>
+    </div>
+</body>
+</html>
