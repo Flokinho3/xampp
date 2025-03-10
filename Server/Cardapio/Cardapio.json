@@ -32,6 +32,14 @@
             "Prato3": {
                 "Nome": "Macarrão ao Sugo",
                 "Preco": "R$ 14,00"
+            },
+            "Prato4": {
+                "Nome": "Macarrão à Carbonara",
+                "Preco": "R$ 16,00"
+            },
+            "Prato5": {
+                "Nome": "Macarrão à Bolonhesa",
+                "Preco": "R$ 16,00"
             }
         }
     },

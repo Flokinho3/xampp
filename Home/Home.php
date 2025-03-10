@@ -106,7 +106,6 @@ if (isset($_SESSION['Alerta'])) {
             <h1>Cardápio</h1>
             <div class="Cardapio-Container">
                 <?php
-                
                 $cardapio = cardapio_exibir();
 
                 // Debug para ver a estrutura
@@ -157,21 +156,23 @@ if (isset($_SESSION['Alerta'])) {
                         echo "</div></div>";
                     }
                 }
-
                 ?>
             </div>
 
             <script>
                 // Função para virar o cartão quando clicado
-                const cards = document.querySelectorAll('.Cardapio-Item');
+                document.addEventListener('DOMContentLoaded', () => {
+                    const cards = document.querySelectorAll('.Cardapio-Item');
 
-                cards.forEach(card => {
-                    card.addEventListener('click', () => {
-                        card.classList.toggle('flipped');
+                    cards.forEach(card => {
+                        card.addEventListener('click', () => {
+                            card.classList.toggle('flipped');
+                        });
                     });
                 });
             </script>
         </div>
+
     </div>
     <script>
         function sair() {
