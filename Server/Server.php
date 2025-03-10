@@ -3,28 +3,28 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
 
-/**
+/*
  * bd projetos_local
  * tabela users
-#	Nome	Tipo	Colação	Atributos	Nulo	Padrão	Comentários	Extra	Ação
-	1	ID Primária	int(11)			Não	Nenhum		AUTO_INCREMENT	Alterar Alterar	Eliminar Eliminar	
-	2	Nome	text	utf8mb4_general_ci		Não	Nenhum			Alterar Alterar	Eliminar Eliminar	
-	3	Email	text	utf8mb4_general_ci		Não	Nenhum			Alterar Alterar	Eliminar Eliminar	
-	4	Senha	text	utf8mb4_general_ci		Não	Nenhum			Alterar Alterar	Eliminar Eliminar	
-	5	Sexo	text	utf8mb4_general_ci		Não	Nenhum			Alterar Alterar	Eliminar Eliminar	
-	6	Certificado Índice	int(11)			Não	Nenhum			Alterar Alterar	Eliminar Eliminar	
-	7	IMG	text	utf8mb4_general_ci		Não	'Elementos\\IMGS\\undefined_image.png'			Alterar Alterar	Eliminar Eliminar	
-	8	Niki	text	utf8mb4_general_ci		Não	Nenhum			Alterar Alterar	Eliminar Eliminar	
-	9	Data_C	datetime			Não	Nenhum			Alterar Alterar	Eliminar Eliminar	
-	10	Datan_naci	date			Não	Nenhum			Alterar Alterar	Eliminar Eliminar	
+    #	Nome	Tipo	Colação	Atributos	Nulo	Padrão	Comentários	Extra	Ação
+	1	ID Primária	int(11)				AUTO_INCREMENT		
+	2	Nome	text	utf8mb4_general_ci					
+	3	Email	text	utf8mb4_general_ci					
+	4	Senha	text	utf8mb4_general_ci					
+	5	Sexo	text	utf8mb4_general_ci					
+	6	Certificado Índice	int(11)						
+	7	IMG	text	utf8mb4_general_ci		Não	'Elementos\\IMGS\\undefined_image.png'				
+	8	Niki	text	utf8mb4_general_ci					
+	9	Data_C	datetime						
+	10	Datan_naci	date						
 
  * 
  * tabela conta
  * 	#	Nome	Tipo	Colação	Atributos	Nulo	Padrão	Comentários	Extra	Ação
-	1	ID Primária	int(11)			Não	Nenhum		AUTO_INCREMENT	Alterar Alterar	Eliminar Eliminar	
-	2	Limite	float			Não	150			Alterar Alterar	Eliminar Eliminar	
-	3	Consumido	float			Não	0			Alterar Alterar	Eliminar Eliminar	
-	4	Livre	tinyint(1)			Não	1			Alterar Alterar	Eliminar Eliminar	
+	1	ID Primária	int(11)				AUTO_INCREMENT		
+	2	Limite	float			Não	150				
+	3	Consumido	float			Não	0				
+	4	Livre	tinyint(1)			Não	1				
 
  */
 
@@ -271,8 +271,8 @@ function cardapio_exibir() {
     ];
     
     // Para teste, força o dia como Quarta (ou use a linha comentada para dia atual)
-    $dia_semana_pt = 'Quarta';
-    // $dia_semana_pt = $dias_traduzidos[date('l')]; // Usar em produção para dia atual
+    //$dia_semana_pt = 'Quarta';
+    $dia_semana_pt = $dias_traduzidos[date('l')]; // Usar em produção para dia atual
     
     // Caminho do arquivo JSON com o cardápio
     $json_file = __DIR__ . '/Cardapio/Cardapio.json';

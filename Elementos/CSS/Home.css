@@ -15,16 +15,16 @@
     --cor-shadow: rgba(0, 0, 0, 0.1);
     --cor-botao-hover: #e65c00;
     --transicao-padrao: 0.3s ease;
-  }
-  
-  /* Reset básico e configurações gerais */
-  * {
+}
+
+/* Reset básico e configurações gerais */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     background-color: var(--cor-fundo);
     font-family: Arial, sans-serif;
     display: flex;
@@ -32,23 +32,23 @@
     min-height: 100vh;
     color: var(--cor-texto);
     line-height: 1.6;
-  }
-  
-  /* Tipografia */
-  h1, h2 {
+}
+
+/* Tipografia */
+h1, h2 {
     color: var(--cor-principal);
     text-align: center;
     margin-bottom: 1rem;
-  }
-  
-  p {
+}
+
+p {
     color: var(--cor-texto);
     line-height: 1.6;
     margin-bottom: 1rem;
-  }
-  
-  /* Layout - Menu e Navegação */
-  .menu {
+}
+
+/* Layout - Menu e Navegação */
+.menu {
     width: 100%;
     background-color: var(--cor-menu-background);
     padding: 15px 0;
@@ -56,24 +56,24 @@
     position: fixed;
     z-index: 1000;
     box-shadow: 0 2px 10px var(--cor-shadow);
-  }
-  
-  .menu a {
+}
+
+.menu a {
     color: var(--cor-link);
     text-decoration: none;
     margin: 0 15px;
     padding: 5px 10px;
     transition: all var(--transicao-padrao);
     border-radius: 5px;
-  }
-  
-  .menu a:hover {
+}
+
+.menu a:hover {
     background-color: var(--cor-principal);
     color: white;
-  }
-  
-  /* Layout - Container Principal */
-  .Container {
+}
+
+/* Layout - Container Principal */
+.Container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,10 +81,10 @@
     width: 100%;
     margin-top: 80px; /* Espaço para o menu fixo */
     padding: 0 20px 40px;
-  }
-  
-  /* Seções Gerais */
-  .inicio, .Cardapio {
+}
+
+/* Seções Gerais */
+.inicio, .Cardapio {
     width: 100%;
     max-width: 800px;
     padding: 25px;
@@ -94,10 +94,10 @@
     animation: fadeInUp 1s forwards;
     opacity: 0;
     transform: translateY(50px);
-  }
-  
-  /* Barra de Progresso */
-  .progress-bar {
+}
+
+/* Barra de Progresso */
+.progress-bar {
     width: 100%;
     height: 20px;
     border-radius: 10px;
@@ -105,37 +105,37 @@
     position: relative;
     background-color: var(--cor-barra-progress);
     margin: 15px 0;
-  }
-  
-  .progress-bar-consumed {
+}
+
+.progress-bar-consumed {
     position: absolute;
     left: 0;
     top: 0;
     height: 100%;
     background-color: var(--cor-consumido);
     transition: width var(--transicao-padrao);
-  }
-  
-  /* Carrossel */
-  .carousel-container {
+}
+
+/* Carrossel */
+.carousel-container {
     position: relative;
     overflow: hidden;
     width: 100%;
     padding: 0 40px;
     margin: 20px 0;
-  }
-  
-  .carousel-slide {
+}
+
+.carousel-slide {
     display: flex;
     transition: transform 0.5s ease-in-out;
-  }
-  
-  .carousel-slide div {
+}
+
+.carousel-slide div {
     min-width: 100%;
-  }
-  
-  .carousel-prev,
-  .carousel-next {
+}
+
+.carousel-prev,
+.carousel-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -147,23 +147,23 @@
     z-index: 1;
     border-radius: 50%;
     transition: background-color var(--transicao-padrao);
-  }
-  
-  .carousel-prev:hover,
-  .carousel-next:hover {
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
     background-color: var(--cor-principal);
-  }
-  
-  .carousel-prev {
+}
+
+.carousel-prev {
     left: 5px;
-  }
-  
-  .carousel-next {
+}
+
+.carousel-next {
     right: 5px;
-  }
-  
-  /* Cardápio */
-  .cardapio {
+}
+
+/* Cardápio */
+.cardapio {
     background-color: var(--cor-background);
     padding: 25px;
     border-radius: 10px;
@@ -172,30 +172,30 @@
     animation: fadeInUp 1s forwards;
     opacity: 0;
     transform: translateY(50px);
-  }
-  
-  .Cardapio-Container {
+}
+
+.Cardapio-Container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     margin-top: 20px;
-  }
-  
-  .dia-section {
+}
+
+.dia-section {
     width: 100%;
     margin-bottom: 30px;
-  }
-  
-  .pratos-container {
+}
+
+.pratos-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-  }
-  
-  /* Cartões de Pratos */
-  .Cardapio-Item {
+}
+
+/* Cartões de Pratos */
+.Cardapio-Item {
     position: relative;
     width: 100%;
     max-width: 300px;
@@ -206,22 +206,25 @@
     cursor: pointer;
     perspective: 1000px;
     overflow: hidden;
-  }
-  
-  .card-inner {
+    animation: fadeInCard 0.6s forwards; /* Nova animação */
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.card-inner {
     position: relative;
     width: 100%;
     height: 100%;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-  }
-  
-  .Cardapio-Item.flipped .card-inner {
+}
+
+.Cardapio-Item.flipped .card-inner {
     transform: rotateY(180deg);
-  }
-  
-  .card-front,
-  .card-back {
+}
+
+.card-front,
+.card-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -229,24 +232,24 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-  }
-  
-  .card-front {
+}
+
+.card-front {
     background-color: var(--cor-card-front);
     z-index: 2;
-  }
-  
-  .card-back {
+}
+
+.card-back {
     background-color: var(--cor-card-back);
     transform: rotateY(180deg);
     justify-content: space-between;
-  }
-  
-  .card-back h3 {
+}
+
+.card-back h3 {
     color: var(--cor-principal);
-  }
-  
-  .botao-compra {
+}
+
+.botao-compra {
     align-self: center;
     background-color: var(--cor-principal);
     color: white;
@@ -257,39 +260,50 @@
     transition: background-color var(--transicao-padrao);
     font-weight: bold;
     margin-top: 15px;
-  }
-  
-  .botao-compra:hover {
+}
+
+.botao-compra:hover {
     background-color: var(--cor-botao-hover);
     transform: scale(1.05);
-  }
-  
-  /* Animações */
-  @keyframes fadeInUp {
+}
+
+/* Animações */
+@keyframes fadeInUp {
     from {
-      opacity: 0;
-      transform: translateY(50px);
+        opacity: 0;
+        transform: translateY(50px);
     }
     to {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
+}
+
+@keyframes fadeInCard {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
     .Container {
-      padding: 0 15px 30px;
-      margin-top: 70px;
+        padding: 0 15px 30px;
+        margin-top: 70px;
     }
-    
+
     .Cardapio-Item {
-      max-width: 100%;
-      height: 350px;
+        max-width: 100%;
+        height: 350px;
     }
-    
+
     .menu a {
-      margin: 0 10px;
-      font-size: 0.9rem;
+        margin: 0 10px;
+        font-size: 0.9rem;
     }
-  }
+}

@@ -107,11 +107,12 @@ if (isset($_SESSION['Alerta'])) {
             <div class="Cardapio-Container">
                 <?php
                 $cardapio = cardapio_exibir();
-
                 // Debug para ver a estrutura
-                echo "<pre style='display:none;'>";
+                /*
+                echo "<pre>";
                 print_r($cardapio);
                 echo "</pre>";
+                */
 
                 foreach ($cardapio as $dia => $detalhes) {
                     // Se o restaurante estiver fechado neste dia
@@ -135,6 +136,8 @@ if (isset($_SESSION['Alerta'])) {
                         foreach ($detalhes['Pratos'] as $pratoKey => $prato) {
                             $nome = $prato['Nome'];
                             $preco = $prato['Preco'];
+                            $ingre = $prato['Ingredientes'];
+                            $acomp = $prato['Acompanhamentos'];
                             echo "<div class='Cardapio-Item'>
                                     <div class='card-inner'>
                                         <div class='card-front'>
@@ -143,7 +146,9 @@ if (isset($_SESSION['Alerta'])) {
                                         </div>
                                         <div class='card-back'>
                                             <h3>$nome</h3>
-                                            <p>Preço: $preco</p>
+                                            <p style='background-color: #FF8C00; color: white; border-radius: 15px;'>Preço: $preco</p>
+                                            <p style='background-color: #FF8C00; color: white; border-radius: 15px;'>Ingredientes: $ingre</p>
+                                            <p style='background-color: #FF8C00; color: white; border-radius: 15px;'>Acompanhamentos: $acomp</p>
                                             <button class='botao-compra' 
                                                     data-prato='$nome' 
                                                     data-preco='$preco'>
