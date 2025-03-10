@@ -1,5 +1,4 @@
-<?php
-
+<?php 
 // verifica se tem uma sessão aberta
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
@@ -7,10 +6,10 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 
 // verifica se o usuário está logado
 if (!isset($_SESSION['Certificado'])) {
-    header('Location: Porteiro/Cadastro.html');
+    header('Location: Porteiro/Cadastro.php');
     exit();
 } else {
-    header('Location: Porteiro/Login.html');
+    header('Location: Porteiro/Login.php');
     exit();
 }
 

@@ -1,0 +1,89 @@
+body {
+    background-color: #e65c00; /* Cor de fundo laranja */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}  
+
+.Vidro_cadastro {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com transparência */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    backdrop-filter: blur(10px);
+}  
+  
+.Cadastro {
+    text-align: center;
+}  
+  
+h1 {
+    color: #e6c50f; 
+    font-size: 24px;
+}  
+  
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fa9600; /* Branco para legibilidade */
+    font-weight: bold;
+}  
+  
+input[type="text"],  
+input[type="email"],  
+input[type="password"],  
+input[type="date"] {
+    width: 96%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ff7b00; /* Branco para bordas */
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    font-size: 14px;
+}  
+  
+input[type="text"]:focus,  
+input[type="email"]:focus,  
+input[type="password"]:focus,  
+input[type="date"]:focus {
+    border-color: #007bff; /* Azul para foco */
+    outline: none;
+    background-color: #ffd000;
+}  
+  
+button, input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff6f00; /* Laranja para o botão */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s;
+}  
+  
+button:hover, input[type="submit"]:hover {
+    background-color: #00cc0a; /* Tom mais escuro de laranja no hover */
+}  
+  
+a {
+    display: block;
+    margin-top: 10px;
+    color: #270f94; /* Branco para links */
+    text-decoration: none;
+    font-size: 14px;
+}  
+  
+a:hover {
+    text-decoration: underline; /* Sublinhado no hover */
+}

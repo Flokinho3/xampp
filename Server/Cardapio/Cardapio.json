@@ -1,0 +1,102 @@
+{
+    "Segunda": {
+        "Fechados": "Nao abrimos as segundas",
+        "Horarios": "Segunda a sexta 14:30 as 22:00\nSabado 10:00 as 22:00\nDomingo 10:00 as 20:00"
+    },
+    "Terça": {
+        "Pratos": {
+            "Prato1": {
+                "Nome": "Feijoada",
+                "Preco": "R$ 20,00"
+            },
+            "Prato2": {
+                "Nome": "Feijao Tropeiro",
+                "Preco": "R$ 15,00"
+            },
+            "Prato3": {
+                "Nome": "Feijao Branco",
+                "Preco": "R$ 15,00"
+            }
+        }
+    },
+    "Quarta": {
+        "Pratos": {
+            "Prato1": {
+                "Nome": "Lasanha de Frango",
+                "Preco": "R$ 22,00"
+            },
+            "Prato2": {
+                "Nome": "Bife à Parmegiana",
+                "Preco": "R$ 18,00"
+            },
+            "Prato3": {
+                "Nome": "Macarrão ao Sugo",
+                "Preco": "R$ 14,00"
+            }
+        }
+    },
+    "Quinta": {
+        "Pratos": {
+            "Prato1": {
+                "Nome": "Frango Assado com Batatas",
+                "Preco": "R$ 25,00"
+            },
+            "Prato2": {
+                "Nome": "Arroz Carreteiro",
+                "Preco": "R$ 17,00"
+            },
+            "Prato3": {
+                "Nome": "Sopa de Ervilha",
+                "Preco": "R$ 12,00"
+            }
+        }
+    },
+    "Sexta": {
+        "Pratos": {
+            "Prato1": {
+                "Nome": "Peixe Frito com Purê",
+                "Preco": "R$ 26,00"
+            },
+            "Prato2": {
+                "Nome": "Bobó de Camarão",
+                "Preco": "R$ 30,00"
+            },
+            "Prato3": {
+                "Nome": "Moqueca Baiana",
+                "Preco": "R$ 28,00"
+            }
+        }
+    },
+    "Sabado": {
+        "Pratos": {
+            "Prato1": {
+                "Nome": "Costela no Bafo",
+                "Preco": "R$ 35,00"
+            },
+            "Prato2": {
+                "Nome": "Picanha Grelhada",
+                "Preco": "R$ 40,00"
+            },
+            "Prato3": {
+                "Nome": "Feijão Tropeiro",
+                "Preco": "R$ 18,00"
+            }
+        }
+    },
+    "Domingo": {
+        "Pratos": {
+            "Prato1": {
+                "Nome": "Rabada com Agrião",
+                "Preco": "R$ 28,00"
+            },
+            "Prato2": {
+                "Nome": "Escondidinho de Carne Seca",
+                "Preco": "R$ 22,00"
+            },
+            "Prato3": {
+                "Nome": "Frango com Quiabo",
+                "Preco": "R$ 20,00"
+            }
+        }
+    }
+}
