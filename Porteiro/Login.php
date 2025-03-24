@@ -30,6 +30,10 @@ if (isset($_SESSION['ID'])) {
     <link rel="icon" href="../Elementos/IMGS/favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <div class="Alerta" style="position: fixed; top: 0; width: 100%; background-color: red; color: white; text-align: center; padding: 10px;">
+        <h2>Projeto De um Estudante!</h2>
+        <p>Nao forneça informaçoes reais ou importantes</p>
+    </div>
     <div class="container">
         <div class="Login">
             <h1>Login</h1>
