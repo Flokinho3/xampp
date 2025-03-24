@@ -29,6 +29,22 @@ if (isset($_SESSION['Alerta'])) {
     <link rel="icon" href="../Elementos/IMGS/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../Elementos/CSS/Home.css?v=<?php echo time(); ?>">
     <title>Inicio - <?php echo htmlspecialchars($user['Nick_name'], ENT_QUOTES, 'UTF-8'); ?></title>
+    <style>
+        .barra {
+            width: 100%;
+            height: 20px;
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .consumido {
+            height: 100%;
+            background-color: #FF4500;
+            width: <?php echo max(1, $porcentagem_consumido); ?>%; /* Garante que a barra sempre tenha no mínimo 1% */
+            transition: width 0.5s ease-in-out;
+        }
+    </style>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const prevButton = document.querySelector('.carousel-prev');
@@ -36,7 +52,7 @@ if (isset($_SESSION['Alerta'])) {
             const carouselSlide = document.querySelector('.carousel-slide');
             const slides = document.querySelectorAll('.carousel-slide div');
             let counter = 0;
-            const totalSlides = slides.length;
+            const totalSlides = 3; // Número total de slides (Infor1, Infor2, Infor3)
 
             // Função para mudar os slides
             function changeSlide() {
@@ -73,7 +89,8 @@ if (isset($_SESSION['Alerta'])) {
     </div>
     <div class="Container">
         <div class="inicio">
-            <h1>Seja bem-vindo ao sistema de portaria <?php echo $user['Nome']; ?></h1>
+            <h1>Central do Usuario!<br>
+            <?php echo $user['Nome']; ?></h1>
             <div class="carousel-container">
                 <div class="carousel-slide">
                     <div class="Infor1">
@@ -81,8 +98,21 @@ if (isset($_SESSION['Alerta'])) {
                         <p>Nome: <?php echo $user['Nome'] ?> </p>
                         <p>Limite: <?php echo $user["Limite"] ?></p>
                         <p>Consumo: <?php echo $user['Consumido'] ?> </p>
-                        <div class="progress-bar">
-                            <div class="progress-bar-consumed" style="width: <?php echo ($user['Consumido'] / $user['Limite']) * 100; ?>%;"></div>
+                        <?php
+                            // Evitar divisão por zero
+                            $consumido = isset($user['Consumido']) ? $user['Consumido'] : 0;
+                            $limite = isset($user['Limite']) && $user['Limite'] > 0 ? $user['Limite'] : 1;
+
+                            // Cálculo da porcentagem
+                            $porcentagem_consumido = ($consumido / $limite) * 100;
+                            //se aporcentagem for maior que 100% adiciona um h3 com a mensagem de alerta
+                            if ($porcentagem_consumido > 100) {
+                                echo "<h3 style='color: red;'>Atenção! O consumo ultrapassou o limite</h3>";
+                            }
+                        ?>
+                        <div class="barra">
+                            <div class="consumido" style="width: <?php echo $porcentagem_consumido; ?>%;"></div>
+                            <div class="disponivel" style="width: <?php echo $porcentagem_disponivel; ?>%;"></div>
                         </div>
                     </div>
                     <div class="Infor2">
@@ -98,9 +128,9 @@ if (isset($_SESSION['Alerta'])) {
                         <p>E assim vai</p>
                     </div>
                 </div>
-                <button class="carousel-prev">❮</button>
-                <button class="carousel-next">❯</button>
             </div>
+            <button class="carousel-prev">❮</button>
+            <button class="carousel-next">❯</button>
         </div>
         <div class="cardapio">
             <h1>Cardápio</h1>
@@ -149,11 +179,7 @@ if (isset($_SESSION['Alerta'])) {
                                             <p style='background-color: #FF8C00; color: white; border-radius: 15px;'>Preço: $preco</p>
                                             <p style='background-color: #FF8C00; color: white; border-radius: 15px;'>Ingredientes: $ingre</p>
                                             <p style='background-color: #FF8C00; color: white; border-radius: 15px;'>Acompanhamentos: $acomp</p>
-                                            <button class='botao-compra' 
-                                                    data-prato='$nome' 
-                                                    data-preco='$preco'>
-                                                Comprar
-                                            </button>
+                                            <a href=\"Compras.php?nome=".urlencode($nome)."&preco=".urlencode($preco)."\" style=\"background-color:rgb(34, 120, 205); color: white; border-radius: 15px; display: block; text-align: center; margin: 5px auto;\">Compara</a>
                                         </div>
                                     </div>
                                 </div>";
@@ -162,6 +188,7 @@ if (isset($_SESSION['Alerta'])) {
                     }
                 }
                 ?>
+            <a href="Carrinho.php">Ver carrinho!</a>
             </div>
 
             <script>
@@ -177,13 +204,70 @@ if (isset($_SESSION['Alerta'])) {
                 });
             </script>
         </div>
+        <div class="Compras">
+            <h1>Compras</h1>
+            <div class="Compras-Container">
+                <?php
+                // Defina o ID do usuário e o certificado (ajuste conforme necessário)
+                $ID = $_SESSION['ID'] ?? null;  // Exemplo pegando da sessão
+                $Certificado = $_SESSION['Certificado'] ?? null;  // Exemplo pegando da sessão
+                $FILE_Compras = "../Elementos/Users/" . $user['Nick_name'] . "/";
+                // Verifica se o diretório existe antes de tentar escanear
+                if (is_dir($FILE_Compras)) {
+                    //lista os json exceto o Compras.json
+                    $files = array_map(function($file) {
+                        return pathinfo($file, PATHINFO_FILENAME);
+                    }, array_diff(scandir($FILE_Compras), array('..', '.', 'Compras.json')));
 
+                    if (empty($files)) {
+                        echo '<p>Sem compras finalizadas.</p>';
+                    }
+                } else {
+                    echo '<p>Sem compras finalizadas.</p>';
+                }
+                if ($ID && $Certificado) {
+                    $compras = compras_exibir($ID, $Certificado);
+                    if (!empty($compras)) {
+                        foreach ($compras as $indice => $compra) {
+                            echo "<div class='compra-container'>";
+                            echo "<h2>Compra #" . ($indice + 1) . " - " . htmlspecialchars($files[$indice + 2]) . "</h2>";
+                            echo "<div class='pratos-container'>";
+
+                            foreach ($compra as $prato) {
+                                $nome = htmlspecialchars($prato['nome']);
+                                $preco = number_format($prato['preco'] / 100, 2, ',', '.'); // Convertendo centavos para reais
+                                $quantidade = $prato['quantidade'];
+
+                                echo "<div class='Cardapio-Item'>
+                                        <div class='card-inner'>
+                                            <div class='card-front'>
+                                                <h3>$nome</h3>
+                                                <p>Preço: R$ $preco</p>
+                                                <p>Quantidade: $quantidade</p>
+                                            </div>
+                                            <div class='card-back'>
+                                                <h3>$nome</h3>
+                                                <p style='background-color: #FF8C00; color: white; border-radius: 15px;'>Preço: R$ $preco</p>
+                                                <p style='background-color: #FF8C00; color: white; border-radius: 15px;'>Quantidade: $quantidade</p>
+                                                <a href=\"Compras.php?nome=".urlencode($nome)."&preco=".urlencode($preco)."\" style=\"background-color:rgb(34, 120, 205); color: white; border-radius: 15px; display: block; text-align: center; margin: 5px auto;\">Comprar novamente</a>
+                                            </div>
+                                        </div>
+                                    </div>";
+                            }
+
+                            echo "</div>"; // Fecha pratos-container
+                            echo "</div>"; // Fecha compra-container
+                        }
+                    } else {
+                        echo '<p>Nenhuma compra encontrada.</p>';
+                    }
+                } else {
+                    echo '<p>Erro: ID do usuário ou certificado ausente.</p>';
+                }
+                ?>
+            </div>
+        </div>
+          
     </div>
-    <script>
-        function sair() {
-            alert('Você clicou em sair!');
-            // Adicione aqui a lógica para sair, se necessário
-        }
-    </script>
 </body>
 </html>

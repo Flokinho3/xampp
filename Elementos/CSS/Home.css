@@ -1,11 +1,16 @@
-/* Definindo cores principais como variáveis */
-:root {
+/* ==================================================
+   Variáveis de Cores e Transições
+   ================================================== */
+   :root {
+    /* Cores principais */
     --cor-fundo: #e65c00;
     --cor-principal: #ff9100;
     --cor-link: #007bff;
     --cor-link-hover: #0056b3;
     --cor-texto: #333;
     --cor-background: rgba(255, 255, 255, 0.9);
+  
+    /* Cores de componentes */
     --cor-barra-progress: #eee;
     --cor-consumido: red;
     --cor-barra-limit: green;
@@ -14,79 +19,93 @@
     --cor-card-back: #f8f8f8;
     --cor-shadow: rgba(0, 0, 0, 0.1);
     --cor-botao-hover: #e65c00;
+  
+    /* Transições */
     --transicao-padrao: 0.3s ease;
-}
-
-/* Reset básico e configurações gerais */
-* {
+  }
+  
+  /* ==================================================
+     Reset e Configurações Globais
+     ================================================== */
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
+  }
+  
+  body {
     background-color: var(--cor-fundo);
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
     color: var(--cor-texto);
     line-height: 1.6;
-}
-
-/* Tipografia */
-h1, h2 {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* ==================================================
+     Tipografia
+     ================================================== */
+  h1, h2 {
     color: var(--cor-principal);
     text-align: center;
     margin-bottom: 1rem;
-}
-
-p {
-    color: var(--cor-texto);
-    line-height: 1.6;
+  }
+  
+  p {
     margin-bottom: 1rem;
-}
-
-/* Layout - Menu e Navegação */
-.menu {
+    color: var(--cor-texto);
+  }
+  
+  /* ==================================================
+     Menu de Navegação
+     ================================================== */
+  .menu {
     width: 100%;
     background-color: var(--cor-menu-background);
     padding: 15px 0;
     text-align: center;
     position: fixed;
-    z-index: 1000;
+    top: 0;
+    left: 0;
+    z-index: 300;
     box-shadow: 0 2px 10px var(--cor-shadow);
-}
-
-.menu a {
+  }
+  
+  .menu a {
     color: var(--cor-link);
     text-decoration: none;
     margin: 0 15px;
     padding: 5px 10px;
-    transition: all var(--transicao-padrao);
     border-radius: 5px;
-}
-
-.menu a:hover {
+    transition: background-color var(--transicao-padrao), color var(--transicao-padrao);
+  }
+  
+  .menu a:hover {
     background-color: var(--cor-principal);
     color: white;
-}
-
-/* Layout - Container Principal */
-.Container {
+  }
+  
+  /* ==================================================
+     Container Principal
+     ================================================== */
+  .Container {
+    width: 100%;
+    max-width: 800px;
+    margin: 80px auto 40px;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 40px;
+  }
+  
+  /* ==================================================
+     Seções: Início e Cardápio
+     ================================================== */
+  .inicio,
+  .Cardapio {
     width: 100%;
-    margin-top: 80px; /* Espaço para o menu fixo */
-    padding: 0 20px 40px;
-}
-
-/* Seções Gerais */
-.inicio, .Cardapio {
-    width: 100%;
-    max-width: 800px;
     padding: 25px;
     background-color: var(--cor-background);
     border-radius: 10px;
@@ -94,10 +113,12 @@ p {
     animation: fadeInUp 1s forwards;
     opacity: 0;
     transform: translateY(50px);
-}
-
-/* Barra de Progresso */
-.progress-bar {
+  }
+  
+  /* ==================================================
+     Barra de Progresso
+     ================================================== */
+  .progress-bar {
     width: 100%;
     height: 20px;
     border-radius: 10px;
@@ -105,126 +126,128 @@ p {
     position: relative;
     background-color: var(--cor-barra-progress);
     margin: 15px 0;
-}
-
-.progress-bar-consumed {
+  }
+  
+  .progress-bar-consumed {
     position: absolute;
-    left: 0;
     top: 0;
+    left: 0;
     height: 100%;
     background-color: var(--cor-consumido);
     transition: width var(--transicao-padrao);
-}
-
-/* Carrossel */
-.carousel-container {
+  }
+  
+  /* ==================================================
+     Carousel
+     ================================================== */
+  .carousel-container {
     position: relative;
-    overflow: hidden;
     width: 100%;
+    overflow: hidden;
     padding: 0 40px;
     margin: 20px 0;
-}
-
-.carousel-slide {
+  }
+  
+  .carousel-slide {
     display: flex;
     transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide div {
+  }
+  
+  .carousel-slide > div {
     min-width: 100%;
-}
-
-.carousel-prev,
-.carousel-next {
+  }
+  
+  .carousel-prev,
+  .carousel-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    color: #fff;
     border: none;
     padding: 10px 15px;
+    border-radius: 50%;
     cursor: pointer;
     z-index: 1;
-    border-radius: 50%;
     transition: background-color var(--transicao-padrao);
-}
-
-.carousel-prev:hover,
-.carousel-next:hover {
+  }
+  
+  .carousel-prev:hover,
+  .carousel-next:hover {
     background-color: var(--cor-principal);
-}
-
-.carousel-prev {
+  }
+  
+  .carousel-prev {
     left: 5px;
-}
-
-.carousel-next {
+  }
+  
+  .carousel-next {
     right: 5px;
-}
-
-/* Cardápio */
-.cardapio {
+  }
+  
+  /* ==================================================
+     Cardápio e Cartões de Pratos
+     ================================================== */
+  .cardapio {
+    width: 100%;
     background-color: var(--cor-background);
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 20px var(--cor-shadow);
-    width: 100%;
     animation: fadeInUp 1s forwards;
     opacity: 0;
     transform: translateY(50px);
-}
-
-.Cardapio-Container {
+  }
+  
+  .Cardapio-Container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     margin-top: 20px;
-}
-
-.dia-section {
+  }
+  
+  .dia-section {
     width: 100%;
     margin-bottom: 30px;
-}
-
-.pratos-container {
+  }
+  
+  .pratos-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-}
-
-/* Cartões de Pratos */
-.Cardapio-Item {
+  }
+  
+  .Cardapio-Item {
     position: relative;
     width: 100%;
     max-width: 300px;
     height: 400px;
-    padding: 0;
     border-radius: 10px;
     box-shadow: 0 4px 15px var(--cor-shadow);
     cursor: pointer;
     perspective: 1000px;
     overflow: hidden;
-    animation: fadeInCard 0.6s forwards; /* Nova animação */
+    animation: fadeInCard 0.6s forwards;
     opacity: 0;
     transform: translateY(50px);
-}
-
-.card-inner {
+  }
+  
+  .card-inner {
     position: relative;
     width: 100%;
     height: 100%;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-}
-
-.Cardapio-Item.flipped .card-inner {
+  }
+  
+  .Cardapio-Item.flipped .card-inner {
     transform: rotateY(180deg);
-}
-
-.card-front,
-.card-back {
+  }
+  
+  .card-front,
+  .card-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -232,24 +255,24 @@ p {
     padding: 20px;
     display: flex;
     flex-direction: column;
-}
-
-.card-front {
+  }
+  
+  .card-front {
     background-color: var(--cor-card-front);
     z-index: 2;
-}
-
-.card-back {
+  }
+  
+  .card-back {
     background-color: var(--cor-card-back);
     transform: rotateY(180deg);
     justify-content: space-between;
-}
-
-.card-back h3 {
+  }
+  
+  .card-back h3 {
     color: var(--cor-principal);
-}
-
-.botao-compra {
+  }
+  
+  .botao-compra {
     align-self: center;
     background-color: var(--cor-principal);
     color: white;
@@ -257,53 +280,142 @@ p {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color var(--transicao-padrao);
     font-weight: bold;
     margin-top: 15px;
-}
-
-.botao-compra:hover {
+    transition: background-color var(--transicao-padrao), transform var(--transicao-padrao);
+  }
+  
+  .botao-compra:hover {
     background-color: var(--cor-botao-hover);
     transform: scale(1.05);
-}
-
-/* Animações */
-@keyframes fadeInUp {
+  }
+  
+  /* ==================================================
+     Animações
+     ================================================== */
+  @keyframes fadeInUp {
     from {
-        opacity: 0;
-        transform: translateY(50px);
+      opacity: 0;
+      transform: translateY(50px);
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
-}
-
-@keyframes fadeInCard {
+  }
+  
+  @keyframes fadeInCard {
     from {
-        opacity: 0;
-        transform: translateY(50px);
+      opacity: 0;
+      transform: translateY(50px);
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
-}
+  }
+  /* ==================================================
+   Estilos para a seção de Compras
+   ================================================== */
+  .Compras {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: var(--cor-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px var(--cor-principal);
+    animation: fadeInUp 1s forwards;
+    opacity: 0;
+    transform: translateY(50px);
+  }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .Container {
-        padding: 0 15px 30px;
-        margin-top: 70px;
+  /* Contêiner geral das compras */
+  .Compras-Container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  /* Estiliza cada compra individualmente */
+  .compra-container {
+    background-color: var(--cor-card-back);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 10px var(--cor-shadow);
+    animation: fadeInCard 0.6s forwards;
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  /* Título de cada compra */
+  .compra-container h2 {
+    color: var(--cor-principal);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  /* Container dos pratos dentro de cada compra */
+  .pratos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  /* Estiliza os itens comprados dentro da compra */
+  .Cardapio-Item {
+    position: relative;
+    width: 100%;
+    max-width: 250px;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--cor-shadow);
+    cursor: pointer;
+    perspective: 1000px;
+    overflow: hidden;
+    animation: fadeInCard 0.6s forwards;
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  /* ==================================================
+  Responsividade da seção de compras
+  ================================================== */
+  @media (max-width: 768px) {
+    .Compras {
+        padding: 15px;
+    }
+
+    .compra-container {
+        padding: 10px;
     }
 
     .Cardapio-Item {
         max-width: 100%;
-        height: 350px;
+        height: 300px;
     }
+  }
 
-    .menu a {
-        margin: 0 10px;
-        font-size: 0.9rem;
+  
+  /* ==================================================
+     Responsividade
+     ================================================== */
+  @media (max-width: 768px) {
+    .Container {
+      padding: 0 15px 30px;
+      margin-top: 70px;
     }
-}
+  
+    .Cardapio-Item {
+      max-width: 100%;
+      height: 350px;
+    }
+  
+    .menu a {
+      margin: 0 10px;
+      font-size: 0.9rem;
+    }
+  }
+  
