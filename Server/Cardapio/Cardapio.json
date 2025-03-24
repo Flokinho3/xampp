@@ -1,0 +1,156 @@
+{
+    "Segunda": {
+        "Fechados": "Nao abrimos as segundas",
+        "Horarios": "Segunda a sexta 14:30 as 22:00\nSabado 10:00 as 22:00\nDomingo 10:00 as 20:00"
+    },
+    "Terça": {
+        "Pratos": {
+            "Prato1": {
+                "Nome": "Feijoada",
+                "Preco": "R$ 20,00",
+                "Acompanhamentos": "Arroz, Couve, Farofa, Laranja, Torresmo, Vinagrete",
+                "Ingredientes": "Feijao Preto, Carne Seca, Paio, Costela, Linguiça, Bacon"
+            },
+            "Prato2": {
+                "Nome": "Feijao Tropeiro",
+                "Preco": "R$ 15,00",
+                "Ingredientes": "Feijao, Bacon, Torresmo, Ovo, Couve, Cebola, Alho, Sal, Pimenta, Farinha de Mandioca",
+                "Acompanhamentos": "Arroz, Couve, Torresmo, Laranja"
+            },
+            "Prato3": {
+                "Nome": "Feijao Branco",
+                "Preco": "R$ 15,00",
+                "Ingredientes": "Feijao Branco, Bacon, Linguiça, Cebola, Alho, Sal, Pimenta, Farinha de Mandioca",
+                "Acompanhamentos": "Arroz, Couve, Torresmo, Laranja"
+            }
+        }
+    },
+    "Quarta": {
+        "Pratos": {
+            "Prato1": {
+                "Nome": "Lasanha de Frango",
+                "Preco": "R$ 22,00",
+                "Ingredientes": "Massa de Lasanha, Frango Desfiado, Molho Branco, Queijo, Presunto, Oregano",
+                "Acompanhamentos": "Arroz Branco, Salada"
+            },
+            "Prato2": {
+                "Nome": "Bife à Parmegiana",
+                "Preco": "R$ 18,00",
+                "Ingredientes": "Bife, Queijo, Molho de Tomate, Oregano, Farinha de Rosca",
+                "Acompanhamentos": "Arroz, Batata Frita, Salada"
+            },
+            "Prato3": {
+                "Nome": "Frango à Passarinho",
+                "Preco": "R$ 20,00",
+                "Ingredientes": "Frango, Alho, Sal, Pimenta, Oregano, Farinha de Trigo",
+                "Acompanhamentos": "Arroz, Batata Frita, Salada"
+            },
+            "Prato4": {
+                "Nome": "Frango à Milanesa",
+                "Preco": "R$ 20,00",
+                "Ingredientes": "Frango, Ovo, Farinha de Rosca, Sal, Pimenta",
+                "Acompanhamentos": "Arroz, Batata Frita, Salada"
+            }
+        }
+    },
+    "Quinta": {
+        "Pratos": {
+            "Prato1": {
+                "Nome": "Macarronada",
+                "Preco": "R$ 18,00",
+                "Ingredientes": "Macarrao, Molho de Tomate, Queijo, Presunto, Oregano",
+                "Acompanhamentos": "Arroz Branco, Salada"
+            },
+            "Prato2": {
+                "Nome": "Bife à Rolê",
+                "Preco": "R$ 20,00",
+                "Ingredientes": "Bife, Bacon, Cenoura, Pimentao, Cebola, Sal, Pimenta",
+                "Acompanhamentos": "Arroz, Batata Frita, Salada"
+            },
+            "Prato3": {
+                "Nome": "Frango à Parmegiana",
+                "Preco": "R$ 20,00",
+                "Ingredientes": "Frango, Queijo, Molho de Tomate, Oregano, Farinha de Rosca",
+                "Acompanhamentos": "Arroz, Batata Frita, Salada"
+            },
+            "Prato4": {
+                "Nome": "Frango à Dorê",
+                "Preco": "R$ 20,00",
+                "Ingredientes": "Frango, Ovo, Farinha de Trigo, Sal, Pimenta",
+                "Acompanhamentos": "Arroz, Batata Frita, Salada"
+            }
+        }
+    },
+    "Sexta": {
+        "Pratos": {
+            "Prato1": {
+                "Nome": "Yakisoba",
+                "Preco": "R$ 20,00",
+                "Ingredientes": "Macarrao, Carne, Frango, Legumes, Molho de Soja",
+                "Acompanhamentos": "Arroz Branco, Salada"
+            },
+            "Prato2": {
+                "Nome": "Bife à Cavalo",
+                "Preco": "R$ 20,00",
+                "Ingredientes": "Bife, Ovo, Sal, Pimenta",
+                "Acompanhamentos": "Arroz, Batata Frita, Salada"
+            },
+            "Prato3": {
+                "Nome": "Frango à Cordon Bleu",
+                "Preco": "R$ 20,00",
+                "Ingredientes": "Frango, Queijo, Presunto, Sal, Pimenta, Farinha de Rosca",
+                "Acompanhamentos": "Arroz, Batata Frita, Salada"
+            },
+            "Prato4": {
+                "Nome": "Frango à Milanesa",
+                "Preco": "R$ 20,00",
+                "Ingredientes": "Frango, Ovo, Farinha de Rosca, Sal, Pimenta",
+                "Acompanhamentos": "Arroz, Batata Frita, Salada"
+            }
+        }
+    },
+    "Sabado": {
+        "Pratos": {
+            "Prato1": {
+                "Nome": "Feijoada",
+                "Preco": "R$ 20,00",
+                "Acompanhamentos": "Arroz, Couve, Farofa, Laranja, Torresmo, Vinagrete",
+                "Ingredientes": "Feijao Preto, Carne Seca, Paio, Costela, Linguiça, Bacon"
+            },
+            "Prato2": {
+                "Nome": "Feijao Tropeiro",
+                "Preco": "R$ 15,00",
+                "Ingredientes": "Feijao, Bacon, Torresmo, Ovo, Couve, Cebola, Alho, Sal, Pimenta, Farinha de Mandioca",
+                "Acompanhamentos": "Arroz, Couve, Torresmo, Laranja"
+            },
+            "Prato3": {
+                "Nome": "Feijao Branco",
+                "Preco": "R$ 15,00",
+                "Ingredientes": "Feijao Branco, Bacon, Linguiça, Cebola, Alho, Sal, Pimenta, Farinha de Mandioca",
+                "Acompanhamentos": "Arroz, Couve, Torresmo, Laranja"
+            }
+        }
+    },
+    "Domingo": {
+        "Pratos": {
+            "Prato1": {
+                "Nome": "Feijoada",
+                "Preco": "R$ 20,00",
+                "Acompanhamentos": "Arroz, Couve, Farofa, Laranja, Torresmo, Vinagrete",
+                "Ingredientes": "Feijao Preto, Carne Seca, Paio, Costela, Linguiça, Bacon"
+            },
+            "Prato2": {
+                "Nome": "Feijao Tropeiro",
+                "Preco": "R$ 15,00",
+                "Ingredientes": "Feijao, Bacon, Torresmo, Ovo, Couve, Cebola, Alho, Sal, Pimenta, Farinha de Mandioca",
+                "Acompanhamentos": "Arroz, Couve, Torresmo, Laranja"
+            },
+            "Prato3": {
+                "Nome": "Feijao Branco",
+                "Preco": "R$ 15,00",
+                "Ingredientes": "Feijao Branco, Bacon, Linguiça, Cebola, Alho, Sal, Pimenta, Farinha de Mandioca",
+                "Acompanhamentos": "Arroz, Couve, Torresmo, Laranja"
+            }
+        }
+    }
+}

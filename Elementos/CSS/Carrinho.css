@@ -1,0 +1,135 @@
+/* Estilos gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Container principal */
+.Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Estilo do carrinho */
+.Carrinho {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.Carrinho h1 {
+    color: #FF6B00; /* Laranja */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+/* Estilo da tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th {
+    background-color: #1976D2; /* Azul */
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Links */
+a {
+    color: #FF6B00; /* Laranja */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #E65100; /* Laranja mais escuro */
+}
+
+/* Botões */
+button {
+    background-color: #FF6B00; /* Laranja */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #E65100; /* Laranja mais escuro */
+}
+
+button:nth-child(2) {
+    background-color: #1976D2; /* Azul */
+}
+
+button:nth-child(2):hover {
+    background-color: #1565C0; /* Azul mais escuro */
+}
+
+button:nth-child(3) {
+    background-color: #f44336; /* Vermelho para limpar */
+}
+
+button:nth-child(3):hover {
+    background-color: #d32f2f; /* Vermelho mais escuro */
+}
+
+/* Total */
+p {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+    margin: 20px 0;
+    color: #1976D2; /* Azul */
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .Carrinho {
+        padding: 15px;
+    }
+    
+    th, td {
+        padding: 8px;
+        font-size: 14px;
+    }
+    
+    button {
+        padding: 10px 15px;
+        font-size: 14px;
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+    }
+}
