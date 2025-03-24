@@ -30,6 +30,10 @@ if (isset($_SESSION['ID'])) {
     <link rel="stylesheet" href="../Elementos/CSS/Cadastro.css">
 </head>
 <body>
+    <div class="Alerta" style="position: fixed; top: 0; width: 100%; background-color: red; color: white; text-align: center; padding: 10px;">
+        <h2>Projeto De um Estudante!</h2>
+        <p>Nao forneça informaçoes reais ou importantes</p>
+    </div>
     <div class="Container">
         <div class="Vidro_cadastro">
             <form action="../Server/Porteiro.php" method="POST">
