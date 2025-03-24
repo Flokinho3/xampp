@@ -1,0 +1,24 @@
+[
+    {
+        "ID": 1,
+        "Nome": "Thiago Siega Silva",
+        "Email": "thiagosiegamg@gmail.com",
+        "Senha": "$2y$10$Edyc7aPo0Jsn0ZvHdwGtwe06o2SSE4Pw344Bw1NoEpSPEsdvH\/Lq.",
+        "Niki": "thicogt",
+        "Data_C": "2025-03-24 22:16:52",
+        "Datan_naci": "2002-04-11",
+        "Certificado": 5766,
+        "IMG": "Elementos\\IMGS\\undefined_image.png"
+    },
+    {
+        "ID": 2,
+        "Nome": "Thiago Siega",
+        "Email": "thiagosiega@gmail.com",
+        "Senha": "$2y$10$NngGjCEwZUYNrjfgMlNiJeJ8KXsgOwrUBfS9o125vbmIRXr1tbPMy",
+        "Niki": "thico",
+        "Data_C": "2025-03-24 22:23:34",
+        "Datan_naci": "2002-04-11",
+        "Certificado": 3543,
+        "IMG": "Elementos\\IMGS\\undefined_image.png"
+    }
+]
