@@ -34,6 +34,7 @@ if (isset($_SESSION['ID'])) {
         <h2>Projeto De um Estudante!</h2>
         <p>Nao forneça informaçoes reais ou importantes</p>
     </div>
+    
     <div class="Container">
         <div class="Vidro_cadastro">
             <form action="../Server/Porteiro.php" method="POST">
